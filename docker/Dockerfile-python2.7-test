@@ -26,7 +26,7 @@ RUN make -j16
 RUN make install
 
 WORKDIR /src
-RUN curl -O http://www.mpfr.org/mpfr-4.0.1/mpfr-4.0.1.tar.gz
+RUN curl -O https://www.mpfr.org/mpfr-4.0.1/mpfr-4.0.1.tar.gz
 RUN tar xvf mpfr-4.0.1.tar.gz
 WORKDIR /src/mpfr-4.0.1
 RUN ./configure --prefix=/usr/local
