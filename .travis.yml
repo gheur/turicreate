@@ -5,8 +5,9 @@ cache: ccache
 compiler: clang
 
 env:
-  - CI=false
-  - OMP_NUM_THREADS=4
+  global:
+    - CI=false
+    - OMP_NUM_THREADS=4
 
 addons:
   apt:
