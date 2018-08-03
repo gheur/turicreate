@@ -2,6 +2,9 @@ sudo: required
 language: c++
 cache: ccache
 
+env:
+  - CI=false
+
 addons:
   apt:
     update: true
