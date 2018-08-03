@@ -1,9 +1,12 @@
+dist: trusty
 sudo: required
 language: c++
 cache: ccache
+compiler: clang
 
 env:
   - CI=false
+  - OMP_NUM_THREADS=4
 
 addons:
   apt:
