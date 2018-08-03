@@ -3,6 +3,4 @@ language: c++
 cache: ccache
 
 script:
-  - mkdir /root/.npm-global
-  - export NPM_CONFIG_PREFIX=/root/.npm-global 
-  - bash scripts/make_wheel.sh --skip_test --skip_cpp_test --build_number=$CI_PIPELINE_ID --num_procs=4 --debug
+  - bash scripts/make_wheel.sh --build_number=$CI_PIPELINE_ID --num_procs=2 --debug
