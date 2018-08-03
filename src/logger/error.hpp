@@ -9,6 +9,7 @@
  */
 
 #include <ios>
+#include <system_error>
 
 namespace turi {
 namespace error {
