@@ -1,18 +1,15 @@
-sudo: false
+sudo: required
 language: c++
 cache: ccache
 
 addons:
   apt:
+    update: true
     packages:
-    - libblas3
-    - liblapack3
-    - libstdc++6
-    - python-setuptools
-    - libgif-dev
-    - vim-common
-    - libx11-dev
-    - virtualenv
+
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install -y libblas3 liblapack3 libstdc++6 python-setuptools libgif-dev vim-common libx11-dev virtualenv
 
 script:
   - bash scripts/make_wheel.sh --build_number=$CI_PIPELINE_ID --num_procs=2 --debug
