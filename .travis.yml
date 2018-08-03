@@ -4,7 +4,6 @@ cache: ccache
 
 addons:
   apt:
-    update: true
     packages:
     - libblas3
     - liblapack3
