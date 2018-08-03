@@ -6,7 +6,10 @@ cache: ccache
 addons:
   apt:
     update: true
+    sources:
+      - ubuntu-toolchain-r-test
     packages:
+      - g++-5
       - libblas3
       - liblapack3
       - libstdc++6
