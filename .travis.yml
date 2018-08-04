@@ -11,7 +11,7 @@ addons:
     packages:
       - gcc-5
       - g++-5
-      - libstdc++6-dev
+      - libstdc++6
       - libblas3
       - liblapack3
       - python-setuptools
