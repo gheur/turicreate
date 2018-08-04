@@ -33,4 +33,5 @@ before_install:
 script:
   - sudo ln -s /usr/bin/gcc-5 /usr/local/bin/gcc
   - sudo ln -s /usr/bin/g++-5 /usr/local/bin/g++
+  - gcc -v
   - bash scripts/make_wheel.sh --build_number=$CI_PIPELINE_ID --num_procs=2 --debug
