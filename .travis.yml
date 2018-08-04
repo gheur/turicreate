@@ -33,4 +33,14 @@ before_install:
 script:
   - sudo ln -s /usr/bin/gcc-5 /usr/local/bin/gcc
   - sudo ln -s /usr/bin/g++-5 /usr/local/bin/g++
+  # We sometimes get `error: No space left on device`
+  # The workaround seems to be to force blocking I/O
+  # See https://github.com/travis-ci/travis-ci/issues/8902 and
+  # https://github.com/travis-ci/travis-ci/issues/4704#issuecomment-348435959
+  # Check whether O_NONBLOCK is set (probably should print "1"):
+  - python -c 'import os,sys,fcntl; flags = fcntl.fcntl(sys.stdout, fcntl.F_GETFL); print(flags&os.O_NONBLOCK);'
+  # Turn off O_NONBLOCK:
+  - python -c 'import os,sys,fcntl; flags = fcntl.fcntl(sys.stdout, fcntl.F_GETFL); fcntl.fcntl(sys.stdout, fcntl.F_SETFL, flags&~os.O_NONBLOCK);'
+  # Check whether O_NONBLOCK is set (should print "0"):
+  - python -c 'import os,sys,fcntl; flags = fcntl.fcntl(sys.stdout, fcntl.F_GETFL); print(flags&os.O_NONBLOCK);'
   - bash scripts/make_wheel.sh --build_number=$CI_PIPELINE_ID --num_procs=2 --debug
