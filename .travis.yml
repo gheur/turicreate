@@ -10,9 +10,9 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - g++-5
+      - libstdc++6-5-dev
       - libblas3
       - liblapack3
-      - libstdc++6
       - python-setuptools
       - libgif-dev
       - vim-common
