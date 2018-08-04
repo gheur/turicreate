@@ -9,8 +9,9 @@ addons:
     sources:
       - ubuntu-toolchain-r-test
     packages:
+      - gcc-5
       - g++-5
-      - libstdc++6
+      - libstdc++6-dev
       - libblas3
       - liblapack3
       - python-setuptools
@@ -26,8 +27,6 @@ env:
     - CXX=g++-5
 
 before_install:
-  - wget http://security.ubuntu.com/ubuntu/pool/main/g/gcc-5/libstdc++6_5.4.0-6ubuntu1~16.04.10_amd64.deb
-  - sudo dpkg -i libstdc++6_5.4.0-6ubuntu1~16.04.10_amd64.deb
   - sudo easy_install pip
   - sudo pip install virtualenv
 
