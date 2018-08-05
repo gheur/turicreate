@@ -18,6 +18,8 @@ addons:
       - libgif-dev
       - vim-common
       - libx11-dev
+      - nodejs
+      - npm
 
 env:
   global:
