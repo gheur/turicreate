@@ -33,9 +33,10 @@ before_install:
   - sudo easy_install pip
   - sudo pip install virtualenv
   # Install node.js from binary
-  - cd /opt
+  - pushd /opt
   - curl -O https://nodejs.org/dist/v8.9.4/node-v8.9.4-linux-x64.tar.xz
-  - tar xvf node-v8.9.4-linux-x64.tar.xz
+  - tar xf node-v8.9.4-linux-x64.tar.xz
+  - popd
 
 script:
   - export PATH="/opt/node-v8.9.4-linux-x64/bin:${PATH}"
