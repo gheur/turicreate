@@ -2,7 +2,6 @@ dist: trusty
 sudo: required
 language: minimal
 cache: ccache
-node_js: "8"
 
 addons:
   apt:
@@ -28,10 +27,18 @@ env:
     - CXX=g++-5
 
 before_install:
+  # Install Python dependencies
+  # TODO - do this through the official Travis CI python/virtualenv support matrix
+  # So that we get various Python versions installed automatically
   - sudo easy_install pip
   - sudo pip install virtualenv
+  # Install node.js from binary
+  - cd /opt
+  - curl -O https://nodejs.org/dist/v8.9.4/node-v8.9.4-linux-x64.tar.xz
+  - tar xvf node-v8.9.4-linux-x64.tar.xz
 
 script:
+  - export PATH="/opt/node-v8.9.4-linux-x64/bin:${PATH}"
   - sudo ln -s /usr/bin/gcc-5 /usr/local/bin/gcc
   - sudo ln -s /usr/bin/g++-5 /usr/local/bin/g++
   # We sometimes get `error: No space left on device`
@@ -44,4 +51,5 @@ script:
   - python -c 'import os,sys,fcntl; flags = fcntl.fcntl(sys.stdout, fcntl.F_GETFL); fcntl.fcntl(sys.stdout, fcntl.F_SETFL, flags&~os.O_NONBLOCK);'
   # Check whether O_NONBLOCK is set (should print "0"):
   - python -c 'import os,sys,fcntl; flags = fcntl.fcntl(sys.stdout, fcntl.F_GETFL); print(flags&os.O_NONBLOCK);'
+  # Build the wheel
   - bash scripts/make_wheel.sh --build_number=$CI_PIPELINE_ID --num_procs=2 --debug
