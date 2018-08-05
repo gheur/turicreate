@@ -2,6 +2,7 @@ dist: trusty
 sudo: required
 language: minimal
 cache: ccache
+node_js: "8"
 
 addons:
   apt:
@@ -18,8 +19,6 @@ addons:
       - libgif-dev
       - vim-common
       - libx11-dev
-      - nodejs
-      - npm
 
 env:
   global:
