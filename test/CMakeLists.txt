@@ -4,25 +4,27 @@ enable_testing()
 
 subdirs(
         toolkits
-        ml_data
-        optimization
-        user_pagefault
-        util
-        serialization
-        logger
-        timer
-        random
+        #ml_data
+        #optimization
+        #user_pagefault
+        #util
+        #serialization
+        #logger
+        #timer
+        #random
         # fault
-        nanosockets
-        fileio
-        shmipc
-        cppipc
-        #flexible_type
-        #parallel
-        #lambda
-        #sframe
-        #sgraph
-        #lazy_eval
+        #nanosockets
+        #fileio
+        #shmipc
+        #cppipc
+
+        flexible_type
+        parallel
+        lambda
+        sframe
+        sgraph
+        lazy_eval
+
         #sframe_query_engine
         #unity
         #sketches
