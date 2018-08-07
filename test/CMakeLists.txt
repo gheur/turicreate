@@ -18,17 +18,17 @@ subdirs(
         #shmipc
         #cppipc
 
-        flexible_type
-        parallel
-        lambda
-        sframe
-        sgraph
-        lazy_eval
+        #flexible_type
+        #parallel
+        #lambda
+        #sframe
+        #sgraph
+        #lazy_eval
 
-        #sframe_query_engine
-        #unity
-        #sketches
-        #generics
+        sframe_query_engine
+        unity
+        sketches
+        generics
         #table_printer
         #network
         #process

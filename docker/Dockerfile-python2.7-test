@@ -4,7 +4,7 @@ FROM centos:centos7
 
 # Update yum and install some standard dev tools and dependencies
 RUN yum -y update
-RUN yum -y install git.x86_64 openssl-devel zlib-devel* bzip2-devel vim-common which lapack lapack-devel blas-devel sqlite-devel
+RUN yum -y install git.x86_64 openssl-devel zlib-devel* bzip2-devel vim-common which atlas atlas-devel lapack lapack-devel blas-devel sqlite-devel
 RUN yum -y groupinstall 'development tools'
 
 # Install visualization dependencies
