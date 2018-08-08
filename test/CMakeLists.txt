@@ -3,7 +3,7 @@ project(TuriTest)
 enable_testing()
 
 subdirs(
-        toolkits
+        #toolkits
         #ml_data
         #optimization
         #user_pagefault
@@ -23,14 +23,12 @@ subdirs(
         #sframe
         #sgraph
         #lazy_eval
-
-
-
-
-
         #sframe_query_engine
         #unity
-        sketches
+
+
+
+        #sketches
         generics
 
 
