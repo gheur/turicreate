@@ -28,8 +28,8 @@ subdirs(
 
 
 
-        #sketches
-        generics
+        sketches
+        #generics
 
 
 
