@@ -23,12 +23,13 @@ subdirs(
         #sframe
         #sgraph
         #lazy_eval
-        #sframe_query_engine
-        #unity
+
+        sframe_query_engine
+        unity
 
 
 
-        sketches
+        #sketches
         #generics
 
 
