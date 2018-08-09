@@ -24,7 +24,9 @@ subdirs(
         #sgraph
         #lazy_eval
 
-        sframe_query_engine
+
+
+        #sframe_query_engine
         unity
 
 
