@@ -1,11 +1,11 @@
 project(unity_test_toolkits)
 
-add_subdirectory(feature_engineering)
-add_subdirectory(ml_data_2)
-add_subdirectory(synthetic_timings)
-add_subdirectory(recsys)
-add_subdirectory(sparse_similarity)
-add_subdirectory(pattern_mining)
+#add_subdirectory(feature_engineering)
+#add_subdirectory(ml_data_2)
+#add_subdirectory(synthetic_timings)
+#add_subdirectory(recsys)
+#add_subdirectory(sparse_similarity)
+#add_subdirectory(pattern_mining)
 
 make_boost_test(kmeans_test.cxx
   REQUIRES unity_clustering util numerics
